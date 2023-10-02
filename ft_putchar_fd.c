@@ -1,30 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elmanea <elmanea@student.42barcelo>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/01 17:22:57 by elmanea           #+#    #+#             */
-/*   Updated: 2023/10/01 17:25:58 by elmanea          ###   ########.fr       */
+/*   Created: 2023/10/01 18:05:09 by elmanea           #+#    #+#             */
+/*   Updated: 2023/10/01 21:43:21 by elmanea          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	ft_putchar_fd(char c, int fd)
 {
-	size_t			i;
-	unsigned char	*str;
-	unsigned char	to_find;
-
-	i = 0;
-	str = (unsigned char *)s;
-	to_find = (unsigned char)c;
-	while (i < n)
-	{
-		if (str[i] == to_find)
-			return (&str[i]);
-		i++;
-	}
-	return (NULL);
+	write(fd, &c, 1);
 }

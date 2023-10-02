@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elmanea <elmanea@student.42barcelo>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/01 17:22:57 by elmanea           #+#    #+#             */
-/*   Updated: 2023/10/01 17:25:58 by elmanea          ###   ########.fr       */
+/*   Created: 2023/09/24 10:04:03 by elmanea           #+#    #+#             */
+/*   Updated: 2023/09/24 10:54:02 by elmanea          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
-{
-	size_t			i;
-	unsigned char	*str;
-	unsigned char	to_find;
+int	ft_tolower(int c);
 
-	i = 0;
-	str = (unsigned char *)s;
-	to_find = (unsigned char)c;
-	while (i < n)
+int	ft_isupper(int c)
+{
+	return (c >= 'A' && c <= 'Z');
+}
+
+int	ft_tolower(int c)
+{
+	if (ft_isupper(c))
 	{
-		if (str[i] == to_find)
-			return (&str[i]);
-		i++;
+		return (c + 32);
 	}
-	return (NULL);
+	return (c);
 }

@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elmanea <elmanea@student.42barcelo>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/01 17:22:57 by elmanea           #+#    #+#             */
-/*   Updated: 2023/10/01 17:25:58 by elmanea          ###   ########.fr       */
+/*   Created: 2023/10/01 18:41:03 by elmanea           #+#    #+#             */
+/*   Updated: 2023/10/01 19:06:52 by elmanea          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t			i;
-	unsigned char	*str;
-	unsigned char	to_find;
+	char	*str;
+	size_t	i;
 
+	if (!s)
+		return (NULL);
+	if (start > ft_strlen(s))
+		len = 0;
+	if (ft_strlen(s) < len)
+		len = ft_strlen(s);
+	str = (char *)malloc(sizeof(*s) * (len + 1));
+	if (!str)
+		return (NULL);
 	i = 0;
-	str = (unsigned char *)s;
-	to_find = (unsigned char)c;
-	while (i < n)
+	while (i < len)
 	{
-		if (str[i] == to_find)
-			return (&str[i]);
+		str[i] = s[i + start];
 		i++;
 	}
-	return (NULL);
+	str[i] = '\0';
+	return (str);
 }

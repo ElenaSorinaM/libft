@@ -6,7 +6,7 @@
 /*   By: elmanea <elmanea@student.42barcelo>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 12:21:12 by elmanea           #+#    #+#             */
-/*   Updated: 2023/09/17 13:03:52 by elmanea          ###   ########.fr       */
+/*   Updated: 2023/09/23 08:34:00 by elmanea          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_bzero(void *s, size_t n)
 {
 	unsigned char	*dest;
-	size_t	i;
+	size_t			i;
 
 	dest = s;
 	i = 0;

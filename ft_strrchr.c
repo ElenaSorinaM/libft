@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elmanea <elmanea@student.42barcelo>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/01 17:22:57 by elmanea           #+#    #+#             */
-/*   Updated: 2023/10/01 17:25:58 by elmanea          ###   ########.fr       */
+/*   Created: 2023/09/24 11:28:21 by elmanea           #+#    #+#             */
+/*   Updated: 2023/09/24 11:55:54 by elmanea          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+char	*ft_strrchr(const char *s, int c)
 {
-	size_t			i;
-	unsigned char	*str;
-	unsigned char	to_find;
+	int	i;
 
 	i = 0;
-	str = (unsigned char *)s;
-	to_find = (unsigned char)c;
-	while (i < n)
-	{
-		if (str[i] == to_find)
-			return (&str[i]);
+	while (s[i])
 		i++;
+	while (i >= 0)
+	{
+		if (s[i] == (char)c)
+			return ((char*)(s + i));
+		i--;
 	}
 	return (NULL);
 }
