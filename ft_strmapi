@@ -1,0 +1,58 @@
+/*
+Parámetros s: La string que iterar.
+f: La función a aplicar sobre cada carácter.
+Valor devuelto La string creada tras el correcto uso de ’f’ sobre
+cada carácter.
+NULL si falla la reserva de memoria.
+Funciones autorizadas
+malloc
+Descripción A cada carácter de la string ’s’, aplica la
+función ’f’ dando como parámetros el índice de cada
+carácter dentro de ’s’ y el propio carácter. Genera
+una nueva string con el resultado del uso sucesivo
+de ’f’
+*/
+#include "libft.h"
+/*La funzione ft_strmapi prende in input una stringa s e un puntatore a una funzione f che accetta due parametri: un intero senza segno unsigned int e un carattere char. La funzione ft_strmapi applica la funzione f a ciascun carattere della stringa s e restituisce una nuova stringa con i risultati delle chiamate a f per ciascun carattere.
+
+Ecco come funziona la funzione ft_strmapi:
+
+Viene verificato se il puntatore s è nullo. Se lo è, la funzione restituisce un puntatore nullo, indicando un errore o un input non valido.
+
+Viene allocata dinamicamente una nuova stringa ret con la stessa lunghezza della stringa s più uno per il terminatore NULL.
+
+Viene inizializzato un contatore i a 0, che sarà utilizzato per iterare attraverso i caratteri della stringa s.
+
+La funzione entra in un ciclo while che esegue le seguenti operazioni finché non raggiunge la fine della stringa s (cioè finché s[i] non diventa '\0'):
+
+Applica la funzione f(i, s[i]) al carattere s[i] e assegna il risultato all'elemento corrispondente nell'array ret. i rappresenta l'indice del carattere nella stringa s, e s[i] è il carattere stesso.
+
+Incrementa il contatore i per passare al carattere successivo nella stringa s.
+
+Dopo aver elaborato tutti i caratteri nella stringa s, viene aggiunto un terminatore NULL ('\0') alla fine della nuova stringa ret per assicurarsi che sia una stringa valida.
+
+La nuova stringa ret, contenente i risultati dell'applicazione della funzione f ai caratteri di s, viene restituita come risultato della funzione.
+
+Ricorda di deallocare la memoria allocata per la nuova stringa ret quando non ne hai più bisogno utilizzando la funzione free, altrimenti potresti incorrere in una perdita di memoria.
+*/
+
+char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+    char			*ret;
+	unsigned int	i;
+
+	if (!s)
+		return (0);
+	ret = malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (!ret)
+		return (0);
+	i = 0;
+	while (s[i])
+	{
+		ret[i] = f(i, s[i]);
+		++i;
+	}
+	ret[i] = 0;
+	return (ret);
+}
+
