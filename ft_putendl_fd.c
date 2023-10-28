@@ -6,7 +6,7 @@
 /*   By: elmanea <elmanea@student.42barcelo>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 18:09:37 by elmanea           #+#    #+#             */
-/*   Updated: 2023/10/01 18:12:17 by elmanea          ###   ########.fr       */
+/*   Updated: 2023/10/12 21:38:57 by elmanea          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	write(fd, &s, 1);
-	write(fd, "/n", 1);
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }

@@ -6,7 +6,7 @@
 /*   By: elmanea <elmanea@student.42barcelo>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 19:07:12 by elmanea           #+#    #+#             */
-/*   Updated: 2023/10/01 21:10:16 by elmanea          ###   ########.fr       */
+/*   Updated: 2023/10/15 12:55:04 by elmanea          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,3 +37,22 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	hell[j] = '\0';
 	return (hell);
 }
+
+/*
+ *
+int main() {
+    const char *string1 = "Prima parte della stringa";
+    const char *string2 = " Seconda parte della stringa";
+
+    char *concatenated = ft_strjoin(string1, string2);
+
+    if (concatenated != NULL) {
+        printf("Stringa concatenata: %s\n", concatenated);
+        free(concatenated);
+		} else {
+        printf("Errore nell'allocazione di memoria per 
+		la stringa concatenata.\n");
+    }
+
+    return 0;
+}*/

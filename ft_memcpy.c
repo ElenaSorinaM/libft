@@ -6,7 +6,7 @@
 /*   By: elmanea <elmanea@student.42barcelo>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 08:34:37 by elmanea           #+#    #+#             */
-/*   Updated: 2023/09/23 09:34:32 by elmanea          ###   ########.fr       */
+/*   Updated: 2023/10/15 11:31:24 by elmanea          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,3 +32,15 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
+
+/*void *ft_memcpy(void *dest, const void *src, size_t n);
+
+int main() {
+    char source[] = "Hello, World!";
+	char destination[20];
+	ft_memcpy(destination, source, strlen(source) + 1);
+
+    printf("Contenuto della destinazione: %s\n", destination);
+
+    return 0;
+}*/

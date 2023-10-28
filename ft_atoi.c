@@ -6,7 +6,7 @@
 /*   By: elmanea <elmanea@student.42barcelo>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 17:34:59 by elmanea           #+#    #+#             */
-/*   Updated: 2023/10/01 17:38:59 by elmanea          ###   ########.fr       */
+/*   Updated: 2023/10/15 12:32:45 by elmanea          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,3 +32,17 @@ int	ft_atoi(const char *str)
 	}
 	return (res * sign);
 }
+
+/*
+
+int ft_atoi(const char *str);
+
+int main() {
+    const char *string = "12345";
+    int integer = ft_atoi(string);
+
+    printf("Stringa convertita in intero: %d\n", integer);
+
+    return 0;
+}
+*/

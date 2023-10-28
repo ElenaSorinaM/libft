@@ -6,7 +6,7 @@
 /*   By: elmanea <elmanea@student.42barcelo>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 12:16:11 by elmanea           #+#    #+#             */
-/*   Updated: 2023/09/24 12:38:58 by elmanea          ###   ########.fr       */
+/*   Updated: 2023/10/15 12:10:31 by elmanea          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,3 +28,17 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return ((unsigned char)(s1[i]) - (unsigned char)(s2[i]));
 }
+
+/*int ft_strncmp(const char *s1, const char *s2, size_t n);
+
+int main() {
+    const char *string1 = "Hello, World!";
+    const char *string2 = "Hello, Coder!";
+    int n = 7;
+
+    int result = ft_strncmp(string1, string2, n);
+
+    printf("Risultato del confronto: %d\n", result);
+
+    return 0;
+}*/

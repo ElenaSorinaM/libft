@@ -6,12 +6,28 @@
 /*   By: elmanea <elmanea@student.42barcelo>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 18:12:38 by elmanea           #+#    #+#             */
-/*   Updated: 2023/10/01 18:14:15 by elmanea          ###   ########.fr       */
+/*   Updated: 2023/10/18 20:59:30 by elmanea          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	write(fd, &n, 1);
+	if (n == -2147483648)
+	{
+		ft_putstr_fd("-2", fd);
+		n = 147483648;
+	}
+	if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		n *= -1;
+	}
+	if (n > 9)
+	{
+		ft_putnbr_fd((n / 10), fd);
+		n = n % 10;
+	}
+	if (n <= 9)
+		ft_putchar_fd((n + '0'), fd);
 }

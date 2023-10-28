@@ -6,21 +6,49 @@
 /*   By: elmanea <elmanea@student.42barcelo>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 17:29:50 by elmanea           #+#    #+#             */
-/*   Updated: 2023/10/01 17:33:49 by elmanea          ###   ########.fr       */
+/*   Updated: 2023/10/15 12:24:09 by elmanea          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+/*Questa funzione è utilizzata per cercare una sottostringa (needle) 
+ * all'interno di una stringa più grande (haystack) 
+ * con un limite di lunghezza (len)
+ * */
 
-char	*ft_strdup(const char *s1)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	char	*ptr;
-	int		size;
+	size_t	n_len;
 
-	size = ft_strlen(s1);
-	ptr = malloc(sizeof(char) * (size + 1));
-	if (ptr == NULL)
-		return (NULL);
-	ft_memcpy(ptr, s1, size);
-	ptr[size] = '\0';
-	return (ptr);
+	if (*needle == 0 || haystack == needle)
+		return ((char *)haystack);
+	n_len = ft_strlen(needle);
+	while (*haystack && n_len <= len--)
+	{
+		if (!(ft_strncmp((char *)haystack, (char *)needle, n_len)))
+			return ((char *)haystack);
+		haystack++;
+	}
+	return (NULL);
 }
+
+/*
+
+char *ft_strnstr(const char *haystack, const char *needle, size_t len);
+
+int main() {
+    const char *haystack = "Questa è una prova di ricerca di sottostringa";
+    const char *needle = "prova";
+    size_t len = 30;
+
+    char *result = ft_strnstr(haystack, needle, len);
+
+    if (result != NULL) {
+        printf("Sottostringa trovata a partire dalla posizione: 
+		%ld\n", result - haystack);
+    } else {
+        printf("Sottostringa non trovata.\n");
+    }
+
+    return 0;
+}
+*/

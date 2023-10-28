@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: elmanea <elmanea@student.42barcelo>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/01 18:08:04 by elmanea           #+#    #+#             */
-/*   Updated: 2023/10/01 18:09:16 by elmanea          ###   ########.fr       */
+/*   Created: 2023/10/12 21:36:16 by elmanea           #+#    #+#             */
+/*   Updated: 2023/10/12 21:37:17 by elmanea          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,9 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	write(fd, &s, 1);
+	while (*s)
+	{
+		ft_putchar_fd(*s, fd);
+		s++;
+	}
 }

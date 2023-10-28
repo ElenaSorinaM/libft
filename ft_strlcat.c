@@ -6,7 +6,7 @@
 /*   By: elmanea <elmanea@student.42barcelo>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 08:30:01 by elmanea           #+#    #+#             */
-/*   Updated: 2023/10/01 20:45:40 by elmanea          ###   ########.fr       */
+/*   Updated: 2023/10/15 11:58:24 by elmanea          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -27,3 +27,18 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	ft_strlcpy(dst + l_dst, src, dstsize - l_dst);
 	return (l_total);
 }
+
+/*
+ * size_t ft_strlcat(char *dst, const char *src, size_t dstsize);
+
+int main() {
+    char destination[20] = "Hello, ";
+	char source[] = "World!";
+    size_t total_length = ft_strlcat(destination, source, sizeof(destination));
+
+    printf("Contenuto della destinazione concatenata: %s\n", destination);
+    printf("Lunghezza totale: %zu\n", total_length);
+
+    return 0;
+}
+*/
